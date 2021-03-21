@@ -1,7 +1,9 @@
 package com.ydhnwb.mvp_starter_app.ui.main
 
+import com.ydhnwb.mvp_starter_app.common.BaseView
 
-interface MainViewContract {
+
+interface MainViewContract : BaseView {
     interface Listener {
         fun onIncrementClick()
         fun onDecrementClick()

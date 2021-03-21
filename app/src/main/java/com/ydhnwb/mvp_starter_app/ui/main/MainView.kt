@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
 import com.google.android.material.button.MaterialButton
 import com.ydhnwb.mvp_starter_app.R
 
@@ -31,7 +30,7 @@ class MainView (inflater: LayoutInflater, parent : ViewGroup?) : MainViewContrac
         mListener = null
     }
 
-    fun getRootView() = view
+    override fun getRootView() = view
 
     fun setNumText(num : Int){
         numTextView.text = num.toString()
