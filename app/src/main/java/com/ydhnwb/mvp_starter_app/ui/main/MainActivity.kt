@@ -17,6 +17,15 @@ class MainActivity : AppCompatActivity(), MainViewContract.Listener{
         mainView.registerListener(this)
         setContentView(mainView.getRootView())
         setSupportActionBar(mainView.getRootView().findViewById(R.id.toolbar))
+        generateProductList()
+    }
+
+    private fun generateProductList(){
+        val dummies = mutableListOf<String>()
+        for (i in 0..10){
+            dummies.add("Product #$i")
+        }
+        mainView.bindProductToRecyclerView(dummies)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -39,5 +48,10 @@ class MainActivity : AppCompatActivity(), MainViewContract.Listener{
     override fun onDecrementClick() {
         num--
         mainView.setNumText(num)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mainView.unregisterListener(this)
     }
 }

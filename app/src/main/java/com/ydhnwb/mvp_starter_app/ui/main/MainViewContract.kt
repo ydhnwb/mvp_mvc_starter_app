@@ -9,6 +9,7 @@ interface MainViewContract : BaseView {
         fun onDecrementClick()
     }
 
+    fun bindProductToRecyclerView(products: List<String>)
     fun registerListener(listener: Listener)
     fun unregisterListener(listener: Listener)
 }
